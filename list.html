@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/list.module.css">
+    <title>title</title>
+</head>
+
+<body>
+    <h1 class="title">あなたの長所一覧</h1>
+
+    <!-- ここには質問で回答されたもののデータを取り出してきて反映させる -->
+    <div class="tyousyo">
+        <p class="text">これが君の長所だ!!</p>
+
+        <div class="tyousyo_list">
+            <div class="outputtt">
+                <p id="output1" class="tyousyo_1"></p>
+                <!-- <p id="output2" class="tyousyo_2"></p> -->
+                <!-- <p id="output3" name="tyousyo"></p>
+                <p id="output4" name="tyousyo"></p>
+                <p id="output5" name="tyousyo"></p> -->
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="btn">
+        <div class="title_post_btn">
+            <div>
+                <button type='button' class="titlebtn">タイトルへ</button>
+            </div>
+            <div>
+                <!-- 投稿する画面を作るか、押すことでそのまま送信処理をすることになるか -->
+                <!-- <button type='button' class="postbtn">投稿する</button> -->
+            </div>
+        </div>
+
+        <div class="another">
+            <button type='button' class="anotherbtn">みんなの投稿を見る</button>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        // $('.result').on("click", function () {
+        //     location.href = 'result.html'
+        // });
+
+
+
+
+        $('.anotherbtn').on("click", function () {
+            location.href = 'post.html'
+        });
+
+        $('.titlebtn').on("click", function () {
+            location.href = 'title.html'
+        });
+
+        // 投稿するボタンを押したときの送信処理
+        $('.postrbtn').on("click", function () {
+
+
+
+        });
+    </script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+        // 追加
+        import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, where } from
+            "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCcVbVy-pEgB4YVsbWpkGqst0XptMm0cZc",
+            authDomain: "sotusei-tyousyo.firebaseapp.com",
+            projectId: "sotusei-tyousyo",
+            storageBucket: "sotusei-tyousyo.appspot.com",
+            messagingSenderId: "1021979743377",
+            appId: "1:1021979743377:web:1df25c29a833190661db30"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // 追加
+        const db = getFirestore(app);
+
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                const uid = user.uid;
+                console.log(uid);
+
+                // データ受信処理の条件
+                const getdata = collection(db, "answer1");
+                const q = query(getdata, where("userID", "==", uid));
+
+                onSnapshot(q, (querySnapshot) => {
+                    // querySnapshot.docsにcloud firestoreのデータが配列形式で入る
+                    const dataArray = []; // 必要なデータだけが入った新しい配列を作成
+                    querySnapshot.docs.forEach(function (doc) {
+                        const data = {
+                            id: doc.id,
+                            data: doc.data(),
+                        }
+                        dataArray.push(data);
+                    });
+
+                    const tagArray1 = [];
+                    // const tagArray2 = [];
+
+                    dataArray.forEach(function (data) {
+
+                        tagArray1.push(`      
+                            <p>${data.data.a1}</p>
+                            <p>${data.data.a2}</p>
+                            <p>${data.data.a3}</p>
+                            <p>${data.data.a4}</p>
+                            <p>${data.data.a5}</p>
+                            <p>${data.data.a6}</p>
+                            <p>${data.data.a7}</p>
+                            <p>${data.data.a8}</p>
+                            <p>${data.data.a9}</p>
+                            <p>${data.data.a10}</p>
+                            <p>${data.data.a11}</p>
+                            <p>${data.data.a12}</p>
+                            <p>${data.data.a13}</p>
+                            </div>               
+                            `)
+                    })
+
+                    $('#output1').html(tagArray1.join(''));
+
+
+                });
+
+
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

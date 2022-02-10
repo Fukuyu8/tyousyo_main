@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/title.module.css">
+    <title>title</title>
+</head>
+
+<body>
+    <h1 class="title">自分の長所の見つけ方</h1>
+
+    <div class="nextpagebtn">
+        <div>
+            <button type='button' class="anotherbtn">他の人の投稿を見る</button>
+        </div>
+        <div>
+            <button type='button' class="questionbtn">見つけにいく(質問に答える)</button>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+
+        $('.anotherbtn').on("click", function () {
+            location.href = 'post.html'
+        });
+
+        $('.questionbtn').on("click", function () {
+            location.href = 'questions.html'
+        });
+
+    </script>
+
+</body>
+
+</html>

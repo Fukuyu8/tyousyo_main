@@ -1,0 +1,39 @@
+
+.q_text{
+    margin-left: 80px;
+    margin-top: 50px;
+}
+.question_num{
+    font-size: 20px;
+}
+
+.question{
+    font-size: 15px;
+}
+
+.kome{
+    font-size: 10px;
+}
+
+.text_box{
+    width: 60%;
+    margin: 5px 0;
+}
+
+.next_btn{
+    flex-direction: column;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.next_q_btn{
+    font-size: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+.next_another_btn{
+    font-size: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+

@@ -1,0 +1,76 @@
+
+
+.title{
+    font-size: 50px;
+    text-align: center;
+    margin: 50px 0 10px;
+}
+
+.text{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+   
+}
+.tyousyo_list{
+    font-size: 28px;
+}
+
+/* .resultbtn{
+    text-align: center;
+    margin: 50px 0 30px;
+} */
+.result{
+    font-size: 30px;
+    padding: 0 20px;
+}
+
+
+.outputtt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.tyousyo_1{
+    margin: auto;
+
+}
+/* .tyousyo_2{
+    margin: 10px;
+} */
+
+
+
+
+.btn{
+margin-top: 10px;
+}
+.title_post_btn{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.titlebtn{
+    font-size: 40px;   
+    padding: 0 50px;
+}
+/* .postbtn{
+    font-size: 40px;
+    margin-left: 80px;
+    padding: 0 80px;
+} */
+
+.another{
+    text-align: center;
+    margin: 50px 0;
+}
+.anotherbtn{
+    font-size: 40px;
+    padding: 0 20px;
+    
+}
+.data_wrapper{
+    border: 1px solid #ccc;
+}

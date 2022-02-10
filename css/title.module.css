@@ -1,0 +1,23 @@
+
+/* タイトル */
+.title{
+  font-size: 90px;
+  text-align: center;
+  margin: 100px 0;
+}
+
+/* 下のボタン */
+.nextpagebtn{
+  display: flex;
+  justify-content: center;
+}
+.anotherbtn{
+  font-size: 50px;
+  width: 350px;
+  margin: 20px 20px 0 0;
+}
+.questionbtn{
+  font-size: 50px;
+  width: 350px;
+  margin: 20px 0 0 20px;
+}

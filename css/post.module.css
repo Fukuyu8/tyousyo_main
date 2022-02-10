@@ -1,0 +1,31 @@
+
+
+.eve_tyosyo{
+    font-size: 60px;
+    text-align: center;
+}
+.tyousyo_list{
+    text-align: center;
+}
+
+.tyosyo{
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+
+
+
+.btn{
+    text-align: right;
+}
+.titlebtn{
+    font-size: 30px;
+    margin: 10px 50px 0 0;
+    padding: 5px 20px;
+}
+
+.data_container{
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}

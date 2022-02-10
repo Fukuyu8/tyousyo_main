@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/login.module.css">
+
+</head>
+
+<body>
+
+
+    <!-- 登録部分 -->
+    <div class="tyui_box">
+        <p class="p_txt">（注意）今から回答する質問の答えは自動的に「みんなの長所」に掲載されます。</p>
+        <p class="p_txt">大丈夫な方のみ登録をして、回答に進んでください。</p>
+        <p class="p_txt">メールアドレスは1つにつき1回まで登録可能です。</p>
+
+    </div>
+    <div class="register_box">
+        <label for="email" class="mail_txt">Email</label>
+        <input type="email" id="email" name="email" class="register_txt">
+        <label for="password" class="password_txt">Password</label>
+        <input type="password" id="password" name="password" class="register_txt">
+        <button type='button' class="register_btn" id="register_send">登録完了</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCcVbVy-pEgB4YVsbWpkGqst0XptMm0cZc",
+            authDomain: "sotusei-tyousyo.firebaseapp.com",
+            projectId: "sotusei-tyousyo",
+            storageBucket: "sotusei-tyousyo.appspot.com",
+            messagingSenderId: "1021979743377",
+            appId: "1:1021979743377:web:1df25c29a833190661db30"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        $('#register_send').on('click', function () {
+            const email = $('#email').val();
+            const password = $('#password').val();
+
+            // EmailとPasswordでユーザー登録
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log(user);
+
+                    // サインインしたらユーザーデータを取得
+                    onAuthStateChanged(auth, (user) => {
+                        if (user) {
+                            // User is signed in, see docs for a list of available properties
+                            // https://firebase.google.com/docs/reference/js/firebase.User
+                            const uid = user.uid;
+                            console.log(uid);
+
+                            location.href = 'title.html'
+                        } else {
+                            // User is signed out
+                            // ...
+                        }
+                    });
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage)
+                    // ..
+                });
+
+
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

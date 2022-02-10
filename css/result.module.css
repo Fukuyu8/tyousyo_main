@@ -1,0 +1,43 @@
+
+
+.title{
+    font-size: 60px;
+    text-align: center;
+}
+
+.tyousyo_list{
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+
+.btn{
+margin-top: 80px;
+}
+.title_post_btn{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.titlebtn{
+    font-size: 40px;
+    margin-right: 80px;
+    padding: 0 50px;
+}
+.postbtn{
+    font-size: 40px;
+    margin-left: 80px;
+    padding: 0 80px;
+}
+
+.another{
+    text-align: center;
+    margin: 50px 0;
+}
+.anotherbtn{
+    font-size: 40px;
+    padding: 0 20px;
+    
+}
