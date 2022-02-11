@@ -19,12 +19,16 @@
 .btn{
     text-align: right;
 }
+.listbtn{
+    font-size: 30px;
+    margin: 10px 50px 0 0;
+    padding: 5px 20px;
+}
 .titlebtn{
     font-size: 30px;
     margin: 10px 50px 0 0;
     padding: 5px 20px;
 }
-
 .data_container{
     border: 1px solid #ccc;
     margin-bottom: 10px;

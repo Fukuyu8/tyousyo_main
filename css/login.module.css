@@ -6,20 +6,36 @@
     align-items: center;
 }
 .p_txt{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
+.login_box{
+    display: flex;
+    justify-content: center;
+   
+}
+.new{
+    font-size: 25px;
+    font-weight: bold;
+}
 .register_box{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin-right: 40px;
   
 }
+.log_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40px;
+}
+
 .mail_txt{
     font-size: 40px;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .password_txt{
@@ -33,6 +49,11 @@
 }
 
 .register_btn{
+    margin-top: 45px;
+    padding: 15px 60px;
+    font-size: 20px;
+}
+.login_btn{
     margin-top: 45px;
     padding: 15px 60px;
     font-size: 20px;
